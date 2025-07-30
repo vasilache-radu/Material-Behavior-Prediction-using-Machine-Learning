@@ -1,0 +1,38 @@
+innerpoints:40000, boundarypoints:4000, epochs=1000 :
+
+batch_size = 500, lr=0.01, epochs=1000, rel_error_sigma=0.0006384877, rel_error_displacement=0.021253325
+batch_size = 500, lr=0.001, epochs=1000, rel_error_sigma=0.0008930697, rel_error_displacement=0.026993228
+batch_size = 100, lr=0.01, epochs=1000, rel_error_sigma=0.0015070266, rel_error_displacement=0.08401585
+batch_size = 1000, lr=0.01, epochs=1000, rel_error_sigma=0.0010098529, rel_error_displacement=0.007411798
+batch_size = 1000, lr=0.001, epochs=1000, rel_error_sigma=0.002212884, rel_error_displacement=0.08580372, min_rel_error_displacement = 0.036875755
+
+1. lr=0.001 seems to be the best
+2. batch_size = 500 seems to be the best
+3. Keeping epoch=1000
+4. There is a big difference between the rel_error_sigma and rel_error_displacement
+5. rel_error_displacement goes up at some point -> overfitting for displacement
+
+
+xavier_init, batch_size = 1000, lr=0.001, epochs=1000, rel_error_sigma=0.001784147, rel_error_displacement=0.023957018, min_rel_error_displacement = 0.01500692
+xavier, batch=500, lr=0.001, ep=1000, error_sigma=0.0007, error_displ = 0.553, min_error_displ = 0.0103
+
+6. Seems that Xavier_init improves the accuracy
+
+batch_size=500, lr=0.001, epochs=1000, xavier:
+numpoints: 100000, 10000, error_sigma=0.0002, error_displ = 0.017300, min_error_displ = 0.006
+numpoints: 10000, 1000, rel_error_sigma=0.008915, rel_error_displ=0.599768, min_error_displ= 0.411009
+numpoints: 20000, 20000, rel_error_sigma = 0.001832, rel_error_displ=0.06234, min_error_displ=0.06234 (100 epochs)
+numpoints: 20000, 20000, rel_error_sigma = 0.000768, rel_error_displ=0.003264, min_error_displ=0.003264 (200 epochs)
+numpoints: 20000, 20000, rel_error_sigma = 0.001802, rel_error_displ=0.1369, min_error_displ=0.1369 (100 epochs)
+numpoints: 20000, 20000, rel_error_sigma = 0.000437, rel_error_displ=0.00977, min_error_displ=0.003201 (200 epochs)
+numpoints: 20000, 20000, rel_error_sigma = 0.002083, rel_error_displ=0.03657, min_error_displ=0.03657 (100 epochs)
+numpoints: 20000, 10000, rel_error_sigma = 0.0000289, rel_error_displ=0.0000919, min_error_displ=0.0000783 (2000 epochs)
+numpoints: 10000, 10000, rel_error_sigma = 0.000433, rel_error_displ= 0.0338, min_error_displ = 0.0333 (500 epochs)
+numpoints: 5000, 5000, rel_error_sigma = 0.000993, rel_error_displ= 0.0145, min_error_displ = 0.0128 (500 epochs)
+numpoints: 5000, 5000, rel_error_sigma = 0.000286, rel_error_displ= 0.00168, min_error_displ = 0.00102 (1000 epochs)
+numpoints: 5000, 5000, rel_error_sigma = 0.00143, rel_error_displ= 0.0248, min_error_displ = 0.0194 (500 epochs)
+numpoints: 5000, 5000, rel_error_sigma = 0.00180, rel_error_displ= 0.1619, min_error_displ = 0.0731 (500 epochs)
+numpoints: 5000, 5000, rel_error_sigma = 0.000376, rel_error_displ= 0.0614, min_error_displ = 0.0614 (1000 epochs)
+
+Changed the way the points are generated:
+numpoints: 5000, 5000, rel_error_sigma = 0.00148, rel_error_displ = 0.0104, min_error_displ= 0.0103 (500 epochs)
